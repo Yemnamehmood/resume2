@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import Image from 'next/image';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGithub, FaLinkedin , FaAmazon} from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGithub, FaLinkedin , } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 
 const sections = [
@@ -17,7 +17,7 @@ const sections = [
 ];
 
 const Home = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection,setActiveSection] = useState('home');
 
   const scrollToSection = (id: string) => {
     setActiveSection(id);
@@ -33,7 +33,9 @@ const Home = () => {
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
-              className="hover:text-teal-400 transition transform hover:scale-105"
+              className={`hover:text-teal-400 transition transform hover:scale-105 ${
+              activeSection === section.id? 'text-teal-400 font-bold' : ''}`}
+
             >
               {section.name}
             </button>
@@ -97,7 +99,7 @@ const Home = () => {
   {/* Projects Section */}
   <div className="space-y-6 mb-12">
     <h3 className="text-3xl font-semibold">Explore My Projects</h3>
-    <p className="mb-4">Here&apos;s a showcase of some of the projects I've worked on:</p>
+    <p className="mb-4">Here&apos;s a showcase of some of the projects I&apos;ve worked on:</p>
     
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {/* Example Project Cards - Repeat as needed */}
